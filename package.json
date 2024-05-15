@@ -1,0 +1,18 @@
+{
+  "name": "dolgozatprojekt-tester",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/Dolgozat.js",
+  "scripts": {
+    "test": "vitest",
+    "test-coverage": "vitest run --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vitest": "^1.6.0"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^1.6.0"
+  }
+}
