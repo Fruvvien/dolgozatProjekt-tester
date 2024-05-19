@@ -8,18 +8,32 @@ export class Dolgozat{
     PontFelvesz(number){
         if(number < -1 || number > 100){
             throw new Error ("kisebb, mint -1");
+        }else if(number == ""){
+            throw new Error ("üres");
+        }else if(number == null){
+            throw new Error ("null");
+        }else if(!Number.isInteger(number)){
+            throw new Error ("tört");
         }
         else{
             this.#pontokLista.push(number);
+            return true;
         }
     }
 
     MindenkiMegirta(){
+        let count = 0;
         this.#pontokLista.forEach(element => {
             if(element == -1){
-                return true;
+                count++;
             }
         });
+        if(count == 0){
+            return true;
+        }else{
+            return false;
+        }
+        
     }
 
     Bukas(){
@@ -88,7 +102,7 @@ export class Dolgozat{
             }
         }
         else{
-            throw new Error("Kivalok száma nem lehet 0-nál kevesebb")
+            throw new Error("Kivalók száma nem lehet 0-nál kevesebb")
         }
        
     }
@@ -100,7 +114,7 @@ export class Dolgozat{
                 count ++;
             }
         });
-        if( count <= this.#pontokLista.length / 2){
+        if( count >= this.#pontokLista.length / 2){
             return true
         }
         else{
